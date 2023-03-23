@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 class="darkMode">MBTI의 4가지 지표</h1>
+  <button class="darkModeBtn">다크 모드</button>
+  <h3 class="darkMode">1. 외향성(extraversion)과 내향성(introversion)</h3>
+  <p class="darkMode">외향-내향 지표는 심리적 에너지와 관심의 방향이 자신의 내부와 외부 중 주로 어느 쪽으로 향하느냐를 보여 주는 지표이다. 외향적인 사람은 주로 외부 세계에 관심의 초점을 두고 더 주의를 기울이며, 사교적이고 활동적이다. 말로 표현하기를 즐기고, 외부의 자극을 통해 배우는 방식을 선호하기 때문에 경험한 후 이해하는 경향이 있으며, 자신을 숨기기보다는 드러낸다.</p>
+  <p class="darkMode">반면, 내향적인 사람은 자신의 내면에 더 주의를 집중하며, 조용하고 내적 활동을 즐기는 경향이 있다. 생각이 많고, 말보다는 글로 표현하는 것을 더 편하게 느끼며, 이해한 다음에 경험하는 방식을 선호하여 생각을 마친 후에 행동하는 경향이 있다.</p>
+
+  <h3 class="darkMode">2. 감각형(sensing)과 직관형(intuition)</h3>
+  <p class="darkMode">감각-직관 지표는 사람이나 사물 등의 대상을 인식하고 지각하는 방식에서 감각과 직관 중 어느 쪽을 주로 더 사용하는지에 관한 지표이다. 감각형인 사람들은 일반적으로 오관에 의존하고, 현재에 집중하는 경향이 있다. 일 처리가 철저한 편이고, 실제적인 것을 중시하며, 사건을 사실적으로 묘사하는 경향이 있고, 세심한 관찰 능력이 뛰어나다.</p>
+  <p class="darkMode">반면, 직관형인 사람들은 상상력이 풍부하고 창조적이며, 보이는 것 그대로를 보기보다는 육감에 의존하려 한다. 나무보다는 숲을 보려는 경향이 있고, 가능성을 중요시하며, 비유적인 묘사를 선호하는 경향이 있다.</p>
+  
+  <h3 class="darkMode">3. 사고형(thinking)과 감정형(feeling)</h3>
+  <p class="darkMode">사고-감정 지표는 수집한 정보를 바탕으로 판단하고 결정을 내릴 때 사고와 감정 중 어떤 것을 더 선호하는지 알려 준다. 사고형인 사람들은 객관적인 사실에 주목하며, 분석적으로 판단하고자 한다. 공정성을 중요한 가치로 여기고, 원칙과 규범을 지키는 것을 중요시한다. 비판적이고, 맞다-틀리다 식의 사고를 하는 경향이 있다.</p>
+  <p class="darkMode">반면, 감정형인 사람들은 판단을 내릴 때 원리 원칙에 얽매이기보다는 인간적인 관계나 상황적인 특성을 고려하여 판단하고 결정을 내리고자 한다. 이들은 좋다-나쁘다 식의 사고를 하며 정서적 측면에 집중하고, 논리적인 판단이나 원칙보다는 사람들에게 어떤 결과를 가져올지 등을 더 중요시한다.</p>
+  
+  <h3 class="darkMode">4. 판단형(judging)과 인식형(perceiving)</h3>
+  <p class="darkMode">판단-인식 지표는 인식 기능과 판단 기능을 바탕으로 실생활에 대처하는 방식에 있어 판단과 인식 중 어느 쪽을 주로 선호하는지에 관한 경향성을 나타내는 지표이다. 판단형의 사람들은 빠르고 합리적이며 옳은 결정을 내리고자 한다. 이들은 목적 의식이 뚜렷하며, 조직적이고 체계적으로 행동하는 경향이 있다.</p>
+  <p class="darkMode">인식형의 사람들은 판단형의 사람들보다 상황에 맞추어 활동하고, 모험이나 변화에 대한 열망이 높다. 매사에 호기심이 많으며, 사전에 계획을 세웠다 하더라도 상황에 따라 유연하게 행동하는 경향이 있다.</p>
+
+  <script>
+    var mode = document.querySelectorAll('.darkMode');
+    var body = document.querySelector('body');
+    var darkModeBtn = document.querySelector('.darkModeBtn');
+
+    var darkMode = (function(){
+      var isDarkMode = false;
+
+      return function(){
+        for (i=0;i<mode.length;i++){
+          mode[i].style.color = isDarkMode ? 'aliceblue':'black';
+        } 
+        body.style.backgroundColor = isDarkMode ? '#3e3a3a':'white';
+        isDarkMode = !isDarkMode;
+      }
+    })()
+    darkModeBtn.onclick = darkMode;
+
+  </script>
+</body>
+</html>
